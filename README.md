@@ -1,19 +1,20 @@
-## Запуск приложения.
+## How to build.
 
-#### Для запуска приложения требуется установленные Java SE версии 11 
-*Данные приложения не сохраняются между различными запусками приложения.*
+#### Java SE version 11 is required to run the application
+*App data is not saved between different launches of the app.*
 
-1. В консоли в каталоге проекта выполните:
+1. Build project:
 
 ```bash
 $ ./gradlew clean build
 ```
 
-3. Запуск приложения (сервер):
+2. Run server:
 
 ```bash
 $ ./gradlew bootRun
 ```
-Сервер запушен :  [http://localhost:8888](http://localhost:8888)
+Server started :  [http://localhost:8888](http://localhost:8888)
 
-Для остановки выполните 'Ctrl +C' в окне терминала, где запущена команда.
+To stop, type 'Ctrl +C' in the terminal window where the command is running.
+
