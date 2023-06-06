@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background-color: #d6dce8;
+  color: #282c34;
+  padding: 40px;
+}
+
+table {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid #465265;
+  font-size: 20px;
+}
+
+th {
+  font-weight: bold;
+}
+
+button {
+  background-color: #c3d0ef;
+  font-size: 24px;
+}
+
+p {
+  text-align: left;
+}

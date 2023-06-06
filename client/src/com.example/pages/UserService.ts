@@ -1,4 +1,5 @@
 import {User} from "../model/User";
+import {Gender} from "../model/Gender";
 
 const SERVER_BASE_URL = "http://localhost:8888";
 
@@ -8,7 +9,9 @@ const SERVER_BASE_URL = "http://localhost:8888";
 export class UserService {
 
     async getUserById(id: string | undefined): Promise<User> {
-        const response = await fetch(SERVER_BASE_URL, {});
+        const response = await fetch(SERVER_BASE_URL + "/users/" + id, {
+
+        });
 
         const user = await response.json();
         console.log("Get User:", user);
@@ -32,7 +35,14 @@ export class UserService {
 
     private createUserModel(user: any) {
         console.log("user", user);
-        return new User(user?.userId, user?.firstname, user.lastname, user?.patronymic, user?.birthday, user?.gender);
+        const userModel = new User();
+        userModel.userId = user.userId;
+        userModel.firstname = user.firstname;
+        userModel.lastname = user.lastname;
+        userModel.patronymic = user.patronymic;
+        userModel.gender = user.gender as Gender;
+        // userModel.birthDate = new Date('{user.birthDate});
+        return userModel;
     }
 
 }

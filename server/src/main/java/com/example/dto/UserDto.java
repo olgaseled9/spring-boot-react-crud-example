@@ -1,11 +1,10 @@
 package com.example.dto;
 
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.Locale;
 
 /**
  * Container for User's representing data, getter and setter methods.
+ *
  * @see UserDto
  */
 public class UserDto {
@@ -13,7 +12,7 @@ public class UserDto {
     /**
      * Id.
      */
-    private Long userId;
+    private String userId;
 
     /**
      * Firstname.
@@ -43,11 +42,11 @@ public class UserDto {
     public UserDto() {
     }
 
-    public Long getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 

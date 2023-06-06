@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * Http handler for {@link UserDto}.
+ *
+ */
 @RestController
 @RequestMapping("/")
 @CrossOrigin(origins = { "http://localhost:3000"})
@@ -31,7 +35,7 @@ public class UserController {
     }
 
     @GetMapping(value = "users/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<UserDto> findById(@PathVariable Long id) {
+    public ResponseEntity<UserDto> findById(@PathVariable String id) {
         return ResponseEntity.ok(service.findById(id));
     }
 
@@ -48,21 +52,22 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteById(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteById(@PathVariable String id) {
         service.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PutMapping("/person/{id}")
-    UserDto updateUser(@RequestBody UserDto userDto, @PathVariable Long id) {
-        UserDto updatedUser = service.findById(id);
-        updatedUser.setUserId(userDto.getUserId());
-        updatedUser.setFirstname(userDto.getFirstname());
-        updatedUser.setLastname(userDto.getLastname());
-        updatedUser.setPatronymic(userDto.getPatronymic());
-        updatedUser.setBirthday(userDto.getBirthday());
-        updatedUser.setGender(userDto.getGender());
-
-        return updatedUser;
+    @PutMapping("/user/{id}")
+    public ResponseEntity<Void> updateUser(@RequestBody UserDto updatedUser, BindingResult bindingResult, @PathVariable String id) {
+        if (bindingResult.hasErrors()) {
+            LOGGER.error(String.format("Cannot update an user: %s", updatedUser));
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        else {
+            UserDto oldUser= service.findById(id);
+            service.update(oldUser, updatedUser);
+            LOGGER.info(String.format("User are updated: %s", updatedUser));
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
     }
 }

@@ -1,0 +1,12 @@
+plugins {
+    id "com.github.node-gradle.node" version "5.0.0"
+}
+
+node {
+    download = true
+    version = "18.16.0"
+}
+
+task npmStart(type: NpmTask) {
+    args = ['run', 'start']
+}

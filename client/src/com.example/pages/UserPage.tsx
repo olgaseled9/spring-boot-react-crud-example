@@ -28,8 +28,8 @@ export default function UserPage() {
                     <th>Firstname</th>
                     <th>Lastname</th>
                     <th>Patronymic</th>
-                    <th>Birthday</th>
                     <th>Gender</th>
+                    <th>Birthday</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -38,8 +38,8 @@ export default function UserPage() {
                 <td>{user?.firstname}</td>
                 <td>{user?.lastname}</td>
                 <td>{user?.patronymic}</td>
-                {/*<td>{user?.birthDate.toLocaleDateString()}</td>*/}
                 <td>{user?.gender}</td>
+                {/*<td>{user?.birthDate}</td>*/}
                 </tr>
                 </tbody>
             </table>

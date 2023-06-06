@@ -84,12 +84,4 @@ export class User {
         this._birthDate = value;
     }
 
-    constructor(userId: string, firstname: string, lastname: string, patronymic: string, gender: Gender, birthDate: Date) {
-        this._userId = userId;
-        this._firstname = firstname;
-        this._lastname = lastname;
-        this._patronymic = patronymic;
-        this._gender = gender;
-        this._birthDate = birthDate;
-    }
 }

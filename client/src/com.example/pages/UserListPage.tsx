@@ -39,7 +39,7 @@ export default function UserListPage() {
                             <td>{user?.firstname}</td>
                             <td>{user?.lastname}</td>
                             <td>{user?.patronymic}</td>
-                            <td>{user?.birthDate.toString()}</td>
+                            {/*<td>{user?.birthDate.toString()}</td>*/}
                             <td>{user?.gender}</td>
                             <td>
                                 <button
