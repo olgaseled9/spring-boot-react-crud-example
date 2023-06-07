@@ -18,13 +18,17 @@ export default function UserPage() {
         getUser();
     }, )
 
+    if (!user) {
+        return <div>Oops, something went wrong” error...</div>
+    }
+
     return (
         <div>
             <h2>User page</h2>
             <table>
                 <thead>
                 <tr>
-                    <th>Id</th>
+                    <th>Number</th>
                     <th>Firstname</th>
                     <th>Lastname</th>
                     <th>Patronymic</th>
@@ -34,12 +38,12 @@ export default function UserPage() {
                 </thead>
                 <tbody>
                 <tr>
-                <td>{user?.userId}</td>
-                <td>{user?.firstname}</td>
-                <td>{user?.lastname}</td>
-                <td>{user?.patronymic}</td>
-                <td>{user?.gender}</td>
-                {/*<td>{user?.birthDate}</td>*/}
+                <td>{user.userId}</td>
+                <td>{user.firstname}</td>
+                <td>{user.lastname}</td>
+                <td>{user.patronymic}</td>
+                <td>{user.gender}</td>
+                <td>{user.birthDate.toLocaleDateString()}</td>
                 </tr>
                 </tbody>
             </table>

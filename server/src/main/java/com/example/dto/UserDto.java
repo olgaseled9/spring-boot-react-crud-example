@@ -1,6 +1,7 @@
 package com.example.dto;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * Container for User's representing data, getter and setter methods.
@@ -32,7 +33,7 @@ public class UserDto {
     /**
      * Birthday.
      */
-    private LocalDate birthday;
+    private Date birthday;
 
     /**
      * Gender.
@@ -74,11 +75,11 @@ public class UserDto {
         this.patronymic = patronymic;
     }
 
-    public LocalDate getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(LocalDate birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 

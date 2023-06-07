@@ -27,10 +27,10 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "firstname": "Ivan1",
+  "firstname": "Ivan",
   "lastname": "Ivanov",
   "patronymic": "Ivanovich",
-  "birthday": "1992-11-11",
+  "birthday": "1992-11-12",
   "numberOfChildren": 8,
   "gender": "MALE"
 }

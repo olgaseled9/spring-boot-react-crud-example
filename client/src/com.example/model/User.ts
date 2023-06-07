@@ -84,4 +84,15 @@ export class User {
         this._birthDate = value;
     }
 
+    toJson(): Object {
+        return {
+            "userId": this._userId,
+            "firstname": this._firstname,
+            "lastname": this._lastname,
+            "patronymic": this._patronymic,
+            "birthday": this._birthDate?.toISOString(),
+            "gender": this._gender,
+        };
+    }
+
 }

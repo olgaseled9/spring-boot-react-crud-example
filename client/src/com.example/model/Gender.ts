@@ -1,3 +1,6 @@
+/**
+ * Gender.
+ */
 export enum Gender {
 
     MALE = "MALE",
